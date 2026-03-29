@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v4.7.0
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -30,7 +30,7 @@ jobs:
 
       - name: Upload test reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: test-reports
           path: target/surefire-reports/
@@ -41,7 +41,7 @@ jobs:
 
       - name: Upload Checkstyle report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: checkstyle-report
           path: target/checkstyle-result.xml
@@ -52,7 +52,7 @@ jobs:
 
       - name: Upload PMD report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: pmd-report
           path: target/pmd.xml
@@ -63,7 +63,7 @@ jobs:
 
       - name: Upload SpotBugs report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: spotbugs-report
           path: target/spotbugsXml.xml
@@ -74,7 +74,7 @@ jobs:
 
       - name: Upload site reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: site-reports
           path: target/site/
